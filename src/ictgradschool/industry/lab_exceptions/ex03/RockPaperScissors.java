@@ -1,8 +1,6 @@
-package ictgradschool.industry.lab07.ex03;
+package ictgradschool.industry.lab_exceptions.ex03;
 
 import ictgradschool.Keyboard;
-
-import java.security.Key;
 
 /**
  A game of Rock, Paper Scissors

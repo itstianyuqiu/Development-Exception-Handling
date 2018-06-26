@@ -1,4 +1,4 @@
-package ictgradschool.industry.lab07.ex04;
+package ictgradschool.industry.lab_exceptions.ex04;
 
 import ictgradschool.Keyboard;
 

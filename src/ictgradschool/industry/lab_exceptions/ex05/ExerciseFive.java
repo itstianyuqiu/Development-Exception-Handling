@@ -1,4 +1,4 @@
-package ictgradschool.industry.lab07.ex05;
+package ictgradschool.industry.lab_exceptions.ex05;
 
 /**
  * TODO Write a program according to the Exercise Five guidelines in your lab handout.
