@@ -48,16 +48,19 @@ public class ExerciseFour {
 
         System.out.print("Enter an index: ");
 
-        int index=0;
-        try {
+        int index;
+//        try {
             index = Integer.parseInt(Keyboard.readInput());
-        } catch (InvalidIndexException e1){
-            System.out.println("doesn’t enter an integer");
-        } catch (IndexTooHighException e2){
-            System.out.println("enters a number that’s too small");
-        } catch (IndexTooLowException e3){
-            System.out.println("enters a number that’s too large");
-        }
+//        } catch (InvalidIndexException e1){
+//            System.out.println("doesn’t enter an integer");
+//            index = Integer.parseInt(Keyboard.readInput());
+//        } catch (IndexTooHighException e2) {
+//            System.out.println("enters a number that’s too small");
+//            index = Integer.parseInt(Keyboard.readInput());
+//        } catch (IndexTooLowException e3) {
+//            System.out.println("enters a number that’s too large");
+//            index = Integer.parseInt(Keyboard.readInput());
+//        }
 
         return index;
 
@@ -79,9 +82,7 @@ public class ExerciseFour {
 
     public static void main(String[] args) {
         new ExerciseFour().start();
-        InvalidIndexException ine=new InvalidIndexException();
-        IndexTooHighException ithe=new IndexTooHighException();
-        IndexTooLowException itle=new IndexTooLowException();
+
     }
 
 }
