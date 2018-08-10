@@ -27,6 +27,13 @@ public class RockPaperScissors {
             while (!roundComplete) {
 
                 int playerChoice = getPlayerChoice(playerName);
+                while (playerChoice == -1) {
+                    System.out.println("incorrect input, enter again");
+                    playerChoice=getPlayerChoice(playerName);
+                    if (playerChoice!=-1){
+                        break;
+                    }
+                }
                 int computerChoice = getComputerChoice();
 
                 // If the user quits, break out of the outerLoop to completely exit the game.
@@ -99,7 +106,34 @@ public class RockPaperScissors {
      */
     private int getPlayerChoice(String playerName) {
         printMenu(playerName);
-        return Integer.parseInt(Keyboard.readInput());
+
+        String playerChoice = Keyboard.readInput();
+        int playerCh = 0;
+        if (isNum(playerChoice)) {
+            playerCh = Integer.valueOf(playerChoice);
+        }
+        if (playerChoice.equalsIgnoreCase("rock") || playerCh == ROCK) {
+            return ROCK;
+        } else if (playerChoice.equalsIgnoreCase("paper") || playerCh == PAPER) {
+            return PAPER;
+        } else if (playerChoice.equalsIgnoreCase("SCISSORS") || playerCh == SCISSORS) {
+            return SCISSORS;
+        } else if (playerChoice.equalsIgnoreCase("quit") || playerCh == QUIT) {
+            return QUIT;
+        } else {
+            return -1;
+        }
+
+    }
+
+    private boolean isNum(String playerChoice) {
+        try {
+            Integer.valueOf(playerChoice);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
