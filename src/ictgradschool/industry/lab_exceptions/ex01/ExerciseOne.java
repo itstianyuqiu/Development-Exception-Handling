@@ -129,20 +129,25 @@ System.out.println("Number: " + num);
     private void tryCatch07() {
         try {
             try07(0, null);
+        } catch (RuntimeException e) {
             System.out.println("A");
-        } catch (NullPointerException e) {
         }
     }
 
     private void try07(int num, String s) {
+
         try {
             System.out.println("B");
             num = s.length();
-        }finally {
+        } catch (NullPointerException e) {
+
             System.out.println("C");
         }
+
+
     }
-//    ceb
+
+    //    ceb
     private void tryCatch08() {
         try {
             try08(0, null);
@@ -151,6 +156,7 @@ System.out.println("Number: " + num);
             System.out.println("B");
         }
     }
+
     private void try08(int num, String s) {
         System.out.println("C");
         try {
@@ -160,7 +166,8 @@ System.out.println("Number: " + num);
             System.out.println("E");
         }
     }
-//Null String b
+
+    //Null String b
     /*
     java.lang.NullPointerException: Null String
     B
@@ -174,12 +181,14 @@ System.out.println("Number: " + num);
         }
         System.out.println("B");
     }
+
     private void throws09(String numS) throws NullPointerException {
         if (numS == null) {
             throw new NullPointerException("Null String");
         }
         System.out.println("C");
     }
+
     //b
     /*
     Exception in thread "main" java.lang.NullPointerException: Bad String
@@ -199,14 +208,16 @@ System.out.println("Number: " + num);
         }
         System.out.println("C");
     }
+
     private void throws10(String numS) throws NullPointerException {
         if (numS == null) {
             throw new NullPointerException("Bad String");
         }
         System.out.println("D");
     }
+
     public static void main(String[] args) {
         ExerciseOne e = new ExerciseOne();
-        e.throwsClause10();
+        e.tryCatch07();
     }
 }
